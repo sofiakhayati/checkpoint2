@@ -1,0 +1,53 @@
+//************************************* FIRST TASK ***************************
+
+ //**************************************** PART 1
+
+ALGORITHM Dot_product
+VAR
+ i,j : INTEGER;
+ V1,V2 : VECTORS;
+ ps : INTEGER := 0;
+BEGIN 
+ FOR i FROM 1 TO V1.length STEP 1 DO 
+  FOR j FROM 1 TO V2.length STEP 1 DO 
+  ps = ps + V1[i]*V2[j];
+  END_FOR
+ END_FOR
+ Write(ps)
+END
+
+ //***************************************** PART 2
+
+ALGORITHM Orthogonal_vectors
+VAR
+ V1, V2 : VECTORS;
+BEGIN
+ IF (Dot_product(V1, V2) = 0) THEN
+ Write ("V1 and V2 are orthogonals")
+ ELSE
+ Write ("V1 and V2 are NOT orthogonals")
+END
+
+//************************************ SECOND TASK ***********************
+
+ PROCEDURE Insertion_sort ( TAB: ARRAY_OF INTEGER[length]; )
+   
+	VAR
+   int a,b : INTEGER;
+
+   FOR i FROM 1 TO length TAB STEP 1 DO
+   
+      a = TAB[i]
+      b = i
+		
+      WHILE (b > 0 and TAB[b-1] > a) DO
+         TAB[b] = TAB[b-1]
+         b = b -1
+      END_WHILE
+
+
+      TAB[b] = a
+      
+   END_FOR
+	
+ END_PROCEDURE
